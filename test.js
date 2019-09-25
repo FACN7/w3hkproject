@@ -19,8 +19,8 @@ test("addTodo Testing", function(t) {
   var newTodo2 = {
     description: "make fakhfakhena with lots of Ice Cream"
   };
-  var expected = [{id: 0, description: 'make smoothie out of things that should really be cooked', done: false}];
-  var expected2 = [{id: 0, description: 'make smoothie out of things that should really be cooked', done: false},{id: 1, description: 'make fakhfakhena with lots of Ice Cream', done: false}];
+  var expected = [ {id: 2, description: 'make smoothie out of things that should really be cooked', done: false}];
+  var expected2 = [{id: 2, description: 'make smoothie out of things that should really be cooked', done: false},{id: 3, description: 'make fakhfakhena with lots of Ice Cream', done: false}];
   var updatedTodos = logic.addTodo(todos, newTodo);
 
  // console.log(typeof(updatedTodos));
@@ -30,7 +30,8 @@ test("addTodo Testing", function(t) {
   // t.equal(1, todoo, "first id in the list should be 1");
   t.deepEqual([],logic.cloneArrayOfObjects([]),"an empty array sould return an empty array");
 
-  t.equal(updatedTodos,expected ,'this is the updated todos test');
+
+  t.deepEqual(updatedTodos, expected, 'this is the updated todos test');
 
   // console.log(typeof(expected2));
   // console.log(expected2);
