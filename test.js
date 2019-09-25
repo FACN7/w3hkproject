@@ -39,3 +39,82 @@ test("addTodo Testing", function(t) {
   t.deepEqual(updatedTodos2, expected2, 'this is the updated todos2 test');
   t.end();
 });
+
+
+
+test('testing mark to do', function(t) {
+  var todos = [
+    {id: 0, description: 'make tea', done: false},
+    {id: 1, description: 'make eggs', done: true},
+  ];
+
+  //todoFunctions.markTodo(todos, 0);
+  // [
+  //   {id: 0, description: 'make tea', done: true},
+  //   {id: 1, description: 'make eggs', done: true},
+  // ]
+ 
+ // todoFunctions.markTodo(todos, 1);
+  // [
+  //   {id: 0, description: 'make tea', done: false},
+  //   {id: 1, description: 'make eggs', done: false},
+  // ]
+
+
+
+  
+  var actual =  logic.markTodo(todos, 0)[0].done;
+  var expected =true;
+
+  console.log("---------actual--------");
+  console.log(actual);
+  console.log("---------actual-------");
+
+  t.equal(actual,expected,"the task marked ");
+
+
+  t.end();
+});
+
+
+
+
+
+
+
+
+
+
+test('testing idToDelete', function(t) {
+  var todos = [
+    {id: 0, description: 'make tea', done: false},
+    {id: 1, description: 'make eggs', done: true},
+  ];
+
+  //todoFunctions.markTodo(todos, 0);
+  // [
+  //   {id: 0, description: 'make tea', done: true},
+  //   {id: 1, description: 'make eggs', done: true},
+  // ]
+ 
+ // todoFunctions.markTodo(todos, 1);
+  // [
+  //   {id: 0, description: 'make tea', done: false},
+  //   {id: 1, description: 'make eggs', done: false},
+  // ]
+
+
+
+  
+  var actual =  logic.deleteTodo(todos, 0);
+  var expected =1;
+
+  console.log("---------actual--------");
+  console.log(actual[0].description);
+  console.log("---------actual-------");
+
+  t.equal(actual[0].id,expected,"the task deleted ");
+
+
+  t.end();
+});
