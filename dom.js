@@ -7,9 +7,9 @@
   var addTodoForm = document.getElementById('add-todo');
 
   var state = [
-    { id: -3, description: 'first todo' },
-    { id: -2, description: 'second todo' },
-    { id: -1, description: 'third todo' },
+    { id: -3, description: 'first todo', done: false },
+    { id: -2, description: 'second todo', done: true },
+    { id: -1, description: 'third todo', done: false },
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
@@ -19,6 +19,8 @@
     // descreptionNode.addEventListener('onafterprint',function(event){
       var newstate = descreptionNode.textContent = todo.description;
       descreptionNode.classList.add('description-span');
+      if(todo.done){ descreptionNode.classList.add('task-is-done'); }
+
     // });
     todoNode.appendChild(descreptionNode);
     // // you will need to use addEventListener
@@ -29,7 +31,8 @@
     // add span holding description
 
     // this adds the delete button
-    var deleteButtonNode = document.createElement('button');
+
+ 	   var deleteButtonNode = document.createElement('button');
     deleteButtonNode.classList.add('detele-button');
     deleteButtonNode.textContent = 'Deliti';
     deleteButtonNode.addEventListener('click', function(event) {
@@ -38,9 +41,10 @@
     });
     todoNode.appendChild(deleteButtonNode);
 
+
     // add markTodo button
 
-
+ if(!todo.done){
         var markTodoButtonNode = document.createElement('button');
         markTodoButtonNode.classList.add('marktodo-button');
         markTodoButtonNode.textContent = 'Mark ass Done';
@@ -49,6 +53,7 @@
           update(newState);
         });
         todoNode.appendChild(markTodoButtonNode);
+    }
 
     // add classes for css
 
@@ -70,9 +75,10 @@
       // hint: todoFunctions.addTodo
 
       var newState = todoFunctions.addTodo(state,newtodo); // ?? change this!
-
+      document.getElementById("description").text = "";
+		
       update(newState);
-document.getElementById("description").text = "";
+	
     });
   }
 
