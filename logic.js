@@ -5,6 +5,7 @@
 var todoFunctions = {
   // todoFunctions.generateId() will give you a unique id
   // You do not need to understand the implementation of this function.
+
   generateId: (function() {
     var idCounter = 0;
 
@@ -35,11 +36,23 @@ var todoFunctions = {
     return this.cloneArrayOfObjects(todos).concat(todotoadd);
   },
   deleteTodo: function(todos, idToDelete) {
+    var newTodo = todos.filter(task => task.id != idToDelete);
+    return newTodo;
+
+
+  
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
   },
   markTodo: function(todos, idToMark) {
+    var mapAfterMarking = todos.map(function(task){
+      if(task.id == idToMark)
+        task.done = true;
+      return task;});
+
+
+    return mapAfterMarking;
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled
