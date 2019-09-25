@@ -29,87 +29,30 @@ var todoFunctions = {
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
     // hint: array.concat
+    // return todos.concat([].push(newTodo));
+    var todotoadd = JSON.parse(JSON.stringify(newTodo));
+    todotoadd.done = false;
+    todotoadd.id = this.generateId();
+    return this.cloneArrayOfObjects(todos).concat(todotoadd);
   },
   deleteTodo: function(todos, idToDelete) {
-
-    // var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-
-    // const result = words.filter(word => word.length > 6);
-    
+    var newTodo = todos.filter(task => task.id != idToDelete);
+    return newTodo;
 
 
   
-    
-    // console.log(result);
-
-
-
-    // var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-
-
-
-
-
-    var newTodo = todos.filter(task => task.id != idToDelete);
-
-    console.log("----------------------newTodo----------------------");
-    console.log(newTodo);
-    console.log("----------------------newTodo----------------------");
-
-
-
-
-
-return newTodo;
-
-
-
-    // expected output: Array ["exuberant", "destruction", "present"]
-    
-
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
   },
   markTodo: function(todos, idToMark) {
-    console.log("---------------------------------------before-------")
-    console.log(todos[0].done);
-    todos[0].done=true;
-    console.log("---------------------------------------aftter-------")
-    
-    console.log(todos[0].done);
-    console.log("---------------------------------------------------")
-
-
-
-
-    var map1 = todos.map(function(task){
+    var mapAfterMarking = todos.map(function(task){
       if(task.id == idToMark)
         task.done = true;
-
-      return task;  
-   
-      });
-   
+      return task;});
 
 
-
-
-
-    // var map1 = todos.map(task => {
-    //   if(task.id == idToMark){
-    //     task.done = true;
-    //   }});
-
-
-      // map1 =this.cloneArrayOfObjects(map1);
-// console.log("----------------------------------------")
-console.log("---------------------map-------------------");
-
-console.log(map1);
-
-console.log("---------------------map-------------------");
-    return map1;
+    return mapAfterMarking;
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled
