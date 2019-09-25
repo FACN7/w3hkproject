@@ -30,9 +30,8 @@ var todoFunctions = {
     // hint: array.concat
     // return todos.concat([].push(newTodo));
     var todotoadd = JSON.parse(JSON.stringify(newTodo));
-    todotoadd.id = this.generateId();
     todotoadd.done = false;
-
+    todotoadd.id = this.generateId();
     return this.cloneArrayOfObjects(todos).concat(todotoadd);
   },
   deleteTodo: function(todos, idToDelete) {
