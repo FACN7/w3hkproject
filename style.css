@@ -1,3 +1,102 @@
-.task-is-done{
-	color: green;
+body{
+
+  background-image: url("./background.jpg");
+  font-family: Permanent Marker, sans-serif;
+  font-size:30px;
+
+}  
+
+
+  #deleteButton{
+	font-size: 44px; 
+	color:red; 
+	margin: 1.5rem;
+        background-color: Transparent;
+	border: none;
+	cursor:pointer;
+	overflow: hidden;
+	outline:none;
+  }  
+
+
+
+  #markButton{
+	  font-size: 44px; 
+	  margin-right: 3rem;
+	  color: green;
+	  background-color: Transparent;
+	  border: none;
+	  cursor:pointer;
+	  overflow: hidden;
+	  outline:none;
+
+  }
+
+#add-todo{
+  display: flex;
+  justify-content: center;
+  
 }
+
+
+
+#todo-container  {
+    display: flex;
+    justify-content: center;
+    /* background-color: yellow; */
+  }
+
+
+#listTitle{
+  color: yellow;
+  color: black;
+  text-align: center;
+  font-size:7rem;
+  font-family: Permanent Marker, sans-serif;
+  text-transform: uppercase;
+  line-height: 1.5em;
+}
+
+
+
+#submit{
+  font-size:60px;
+  margin: 44 px;
+  margin-left: 3rem; 
+  width: 17 px;
+  height: 6 px;
+
+  background-color: Transparent;	
+  border: none;
+  cursor:pointer;
+    overflow: hidden;
+  outline:none;
+
+}
+
+
+#description{
+  font-size: 30px;
+  font-family: Permanent Marker, sans-serif;
+border: 0.5rem;
+  width: 42rem;
+
+border-radius: 5%;
+ border-style: solid;
+  border-color: red;
+
+}
+
+
+
+
+  .task-is-done{
+  display:inline-block;
+text-decoration: line-through wavy red;
+}
+
+
+
+
+
+

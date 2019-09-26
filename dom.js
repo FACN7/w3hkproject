@@ -33,8 +33,9 @@
     // this adds the delete button
 
  	   var deleteButtonNode = document.createElement('button');
+    deleteButtonNode.id = 'deleteButton';
     deleteButtonNode.classList.add('detele-button');
-    deleteButtonNode.textContent = 'Deliti';
+    deleteButtonNode.textContent =" ✘ ";
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
@@ -45,8 +46,9 @@
     // add markTodo button
  if(!todo.done){
         var markTodoButtonNode = document.createElement('button');
+        markTodoButtonNode.id = 'markButton';
         markTodoButtonNode.classList.add('marktodo-button');
-        markTodoButtonNode.textContent = 'Mark as Done';
+        markTodoButtonNode.textContent = ' ✔ ';
         markTodoButtonNode.addEventListener('click', (e)=>{
           var newState = todoFunctions.markTodo(state, todo.id);
           update(newState);
@@ -54,8 +56,9 @@
         todoNode.appendChild(markTodoButtonNode);
     }else{
       var markTodoButtonNode = document.createElement('button');
+      markTodoButtonNode.id = 'markButton';
       markTodoButtonNode.classList.add('marktodo-button');
-      markTodoButtonNode.textContent = 'Mark as NOT Done';
+      markTodoButtonNode.textContent = ' ✔ ';
       markTodoButtonNode.addEventListener('click', (e)=> {
         var newState = todoFunctions.markTodo(state, todo.id);
         update(newState);
