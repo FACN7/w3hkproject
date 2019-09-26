@@ -43,16 +43,25 @@
 
 
     // add markTodo button
-
  if(!todo.done){
         var markTodoButtonNode = document.createElement('button');
         markTodoButtonNode.classList.add('marktodo-button');
-        markTodoButtonNode.textContent = 'Mark ass Done';
-        markTodoButtonNode.addEventListener('click', function(event) {
+        markTodoButtonNode.textContent = 'Mark as Done';
+        markTodoButtonNode.addEventListener('click', (e)=>{
           var newState = todoFunctions.markTodo(state, todo.id);
           update(newState);
         });
         todoNode.appendChild(markTodoButtonNode);
+    }else{
+      var markTodoButtonNode = document.createElement('button');
+      markTodoButtonNode.classList.add('marktodo-button');
+      markTodoButtonNode.textContent = 'Mark as NOT Done';
+      markTodoButtonNode.addEventListener('click', (e)=> {
+        var newState = todoFunctions.markTodo(state, todo.id);
+        update(newState);
+      });
+      todoNode.appendChild(markTodoButtonNode);
+
     }
 
     // add classes for css
@@ -68,17 +77,17 @@
       // what does event.preventDefault do?
       // what is inside event.target?
       var newtodo={};
-      var description = document.getElementById("description").value; // event.target ....
-      newtodo.description = description;
+      var description = document.getElementById("description"); // event.target ....
+      newtodo.description = description.value;
+      description.value = description.defaultValue;
       console.log(newtodo.description);
       event.preventDefault();
       // hint: todoFunctions.addTodo
 
       var newState = todoFunctions.addTodo(state,newtodo); // ?? change this!
-      document.getElementById("description").text = "";
-		
+
       update(newState);
-	
+
     });
   }
 
