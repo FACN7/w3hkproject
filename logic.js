@@ -40,15 +40,15 @@ var todoFunctions = {
     return newTodo;
 
 
-
+  
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
   },
   markTodo: function(todos, idToMark) {
-    var mapAfterMarking = todos.map((task)=>{
+    var mapAfterMarking = todos.map(function(task){
       if(task.id == idToMark)
-        task.done = (!task.done);
+        task.done = true;
       return task;});
 
 
