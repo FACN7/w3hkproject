@@ -1,2 +1,2 @@
 # w3hkproject
-# [TO INDEX YOU GO!](https://github.com/FACN7/w3hkproject.git) punk
+# [TO INDEX YOU GO!](https://facn7.github.io/w3hkproject/) 
