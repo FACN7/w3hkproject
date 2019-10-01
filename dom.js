@@ -34,7 +34,7 @@
 
  	   var deleteButtonNode = document.createElement('button');
     deleteButtonNode.id = 'deleteButton';
-    deleteButtonNode.classList.add('detele-button');
+    deleteButtonNode.classList.add('delete-button');
     deleteButtonNode.textContent =" ✘ ";
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
